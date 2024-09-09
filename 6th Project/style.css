@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    overflow: hidden;
+}
+
+#left{
+    height: 100%;
+    width: 50%;
+    background-color: blue;
+    position: relative;
+}
+
+#left h1{
+    position: absolute;
+}
+
+#left img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    background-size: cover;
+    z-index: 9999;
+    /* display: none; */
+    animation-name: roti;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+#overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgb(94, 22, 22);
+    animation-name: move;
+    animation-duration: 1s;
+    /* animation-delay: 1s; */
+    animation-fill-mode: forwards;
+}
+
+#right{
+    height: 100%;
+    width: 50%;
+    background-color: yellow;
+    position: relative;
+}
+
+#nav{
+    height: 100px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: relative;
+    z-index: 99999;
+    color: #fff;
+    animation-name: mc;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    opacity: 0;
+}
+
+#nav i{
+    cursor: pointer;
+}
+
+#nav h2{
+    text-transform: uppercase;
+}
+
+#left>h1{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    font-size: 80px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: right;
+    line-height: 75px;
+    animation-name: bc;
+    animation-delay: 1.5s;
+    opacity: 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 9999;
+}
+
+#img1{
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    object-fit: cover;
+    left: 40%;
+    transform: translate(-50%,0);
+    animation-name: move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#img2{
+    position: absolute;
+    height: 290px;
+    width: 220px;
+    object-fit: cover;
+    top: 50%;
+    left: 6%;
+    transform: translate(0,-50%);
+    animation-name: move;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-fill-mode: forwards;
+    
+}
+
+#img3{
+    position: absolute;
+    height: 150px;
+    width: 160px;
+    object-fit: cover;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%,0);
+    animation-name: move;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#right>h1{
+    position: absolute;
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    rotate: -90deg;
+    right: -14%;
+    top: 29%;
+}
+
+@keyframes move {
+    0%{
+        transform: translateX(-100%);
+        /* right: -50%; */
+        /* opacity: 0; */
+        z-index: 99991;
+    }
+    50%{
+        transform: translateX(0);
+        /* opacity: 1; */
+        z-index: 99991;
+    }
+}
+
+@keyframes roti {
+    0%{
+        transform: rotate(30deg); scale:(1.4);     /* scale means size jo size h uska 1.4 jese utna bda ho jayga */
+    }
+    100%{
+        transform: rotate(0); scale: 1;
+    }
+}
+
+@keyframes bc {
+    0%{
+        transform: translateY(100%) ;
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes mc {
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

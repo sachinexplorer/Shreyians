@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;                /* boiler plate * and html,body */
+}
+                       
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 70px;
+    font-family: gilroy;
+    transform: translate(-50%, -50%);
+}
+
+h1:hover{
+    color: red;     /* when we go on the element the properties will be changed */
+}
+
+h1::before{
+    content: "kya h be ";         /* Property apply before the element */
+}
+
+h1::after{
+    content: "  chal be";          /* Property apply after the element */     
+}                                  /* Press Win+.(full stop key) for show emoji on pc */
+
+#box{
+    height: 300px;
+    width: 10%;
+    background-color: salmon;
+    animation-name: system;         /* when we use keyframes then give animation name to parent it's mandatory */
+    animation-duration: 6s;         /* run time */
+    animation-delay: 1s;            /* run after 1 sec */
+    animation-fill-mode: forwards;  /* animation khtam hone ke baad kkeyframes ki from wali nhi to ke ander jo prop h wo work kregi  */
+    animation-iteration-count: 2, infinite;   /* repeat animation two times & you can infinity times also*/
+    animation-direction: alternate;   /* run 1st time clockwise then 2nd time anticlockwise */
+    animation-timing-function: linear, cubic-bezier(0.075, 0.82, 0.165, 1); /* run with same speed or like a graph firstly first then slow */
+}
+
+button{
+    position: absolute;
+    left: 5%;
+    padding: 14px 20px;       /* top bottom & left right */
+    color: #fff;
+    background-color: rgb(21, 171, 225);
+    border: none;
+    cursor: pointer;          /* when we go to the element then mouse click changed into clickable cursor */
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 45%;
+}
+
+button::before{
+    content: "";              /* content is mandatory to write otherwise all prop will not work */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(19, 77, 97);
+    top:0%;
+    left: 0%;
+    z-index: -1;               /* this property helps you to behind back of element */
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;  /* transition is the changes when we go the first element to second element the state is changed */
+}
+
+button:hover::before{
+    opacity: 0;
+    scale: 2;                 /* this is like a effect/animation */
+}
+
+/* @keyframes move {             /* you can  use from or to in keyframes or in percentage also like 0% 33% 66% 100% */
+    /* from{                     initial state */
+        /* width: 10%; */
+    /* } */
+    /* to{                       final state */
+        /* width: 90%; */
+    /* } */
+/* } */ 
+
+@keyframes system {
+    0%{
+        left: 0%;
+        background-color: royalblue;
+        top: 0%;
+    }
+    33%{
+        left: 90%;                                 /* Pending....will not work */
+        top: 0%;
+        background-color: red;
+    }
+    66%{
+        left: 90%;
+        top: 80%;
+        background-color: aquamarine;
+    }
+    100%{
+        left: 0%;
+        top: 80%;
+        background-color: green;
+    }
+}

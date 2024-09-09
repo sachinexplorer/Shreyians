@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gilroy;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#box{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    /* border-top-left-radius: 500px; */
+    /* border-top-right-radius: 500px; */
+    background-color: salmon;
+}
+
+/* if you want to create any shape like heart etc then use clip path search on google css clip path & go to bennettfeely site then create here any shape and copy code of clip path & paste in css prop any element */
+
